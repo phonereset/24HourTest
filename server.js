@@ -17,13 +17,14 @@ const BATCH_SIZE = 500;
 const MAX_WORKERS = 50;
 const TARGET_LOCATION = "http://fsmms.dgf.gov.bd/bn/step2/movementContractor/form";
 
-// Enhanced headers from Python code
+// Enhanced headers
 const BASE_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 13; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'Accept-Encoding': 'gzip, deflate, br, zstd',
-    'Cache-Control': 'max-age=0',
-    'sec-ch-ua': '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache',
+    'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
     'Origin': 'https://fsmms.dgf.gov.bd',
@@ -32,7 +33,8 @@ const BASE_HEADERS = {
     'Sec-Fetch-Mode': 'navigate',
     'Sec-Fetch-User': '?1',
     'Sec-Fetch-Dest': 'document',
-    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Language': 'en-US,en;q=0.9,bn;q=0.8',
+    'X-Requested-With': 'XMLHttpRequest'
 };
 
 // Helper functions
@@ -605,3 +607,4 @@ if (isMainThread) {
     });
 
 }
+
