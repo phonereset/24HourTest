@@ -17,24 +17,38 @@ const BATCH_SIZE = 500;
 const MAX_WORKERS = 50;
 const TARGET_LOCATION = "http://fsmms.dgf.gov.bd/bn/step2/movementContractor/form";
 
-// Enhanced headers
+// Enhanced headers from Python code
 const BASE_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 13; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'Accept-Encoding': 'gzip, deflate, br',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+    
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    
+    'Accept-Encoding': 'gzip, deflate, br, zstd',
+    
+    'Accept-Language': 'en-US,en;q=0.9',
+    
     'Cache-Control': 'no-cache',
+    
     'Pragma': 'no-cache',
-    'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
-    'sec-ch-ua-mobile': '?1',
-    'sec-ch-ua-platform': '"Android"',
-    'Origin': 'https://fsmms.dgf.gov.bd',
+    
+    'sec-ch-ua': '"Google Chrome";v="121", "Chromium";v="121", "Not A(Brand";v="99"',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-ch-ua-mobile': '?0',
+    
     'Upgrade-Insecure-Requests': '1',
+    
     'Sec-Fetch-Site': 'same-origin',
     'Sec-Fetch-Mode': 'navigate',
     'Sec-Fetch-User': '?1',
     'Sec-Fetch-Dest': 'document',
-    'Accept-Language': 'en-US,en;q=0.9,bn;q=0.8',
-    'X-Requested-With': 'XMLHttpRequest'
+    
+    'Referer': 'https://fsmms.dgf.gov.bd/',
+    'Origin': 'https://fsmms.dgf.gov.bd',
+    
+    // Anti-bot natural browser headers
+    'Priority': 'u=0, i',
+    'DNT': '1',
+    'Connection': 'keep-alive'
 };
 
 // Helper functions
@@ -605,6 +619,4 @@ if (isMainThread) {
         console.log(` Health check: http://localhost:${PORT}/health`);
         console.log(` Test mode: http://localhost:${PORT}/get-info?nid=YOUR_NID&dob=YYYY-MM-DD&test=true`);
     });
-
 }
-
